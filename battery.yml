@@ -3,9 +3,10 @@
   become: true
   gather_facts: false
   remote_user: support
+
   tasks:
     - shell: 'system_profiler SPPowerDataType | grep -A3 -B7 "Condition"'
-  register: info
+      register: info
 
-- debug:
-    var: info
+    - debug:
+        var: info
