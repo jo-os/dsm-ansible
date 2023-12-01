@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  gather_facts: false
+  remote_user: support
+  vars:
+    account: "DSM Konferenz"
+    art: "Passwort des AirPort-Netzwerks"
+    name: "DSM Konferenz"
+    ort: "AirPort"
+    passwort: "my_passwort"
+  tasks:
+    - shell: 'sudo security add-generic-password -a {{ account }} -D {{ art }} -l {{ name}}  -s {{ ort }} -w {{ passwort }}'
+
+# Check and test!!!!
+
+# -U - Update
+# -w - Kennwort
+# -D - Art
+# -a Account
+# -l Name
+# -s Ort
