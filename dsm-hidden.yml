@@ -1,0 +1,6 @@
+---
+- hosts: inf
+  gather_facts: false
+  remote_user: support
+  tasks:
+    - shell: "sudo dscl . create /Users/DSM IsHidden 1"
