@@ -1,0 +1,13 @@
+---
+plugin: vmware_vm_inventory
+strict: False
+hostname: 10.144.40.110
+validate_certs: False
+with_tags: True
+hostnames: 
+  - 'config.name'
+compose:
+  ansible_host: 'guest.hostName'
+keyed_groups:
+  - key: 'tags'
+    separator: ''
